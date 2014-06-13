@@ -690,7 +690,7 @@ button.round, .button.round {
 }
 
 .portfolio-item img {
-    /*max-width: 90%;*/
+    border: 1px solid #ccc;
 }       
 
 .portfolio-item h1 {
