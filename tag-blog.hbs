@@ -1,0 +1,38 @@
+{{!< default}}
+
+
+<main class="content" role="main">
+    
+    <div class="page-no-image-title">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            Blog
+        </div>
+    </div>
+    
+    <div class="blog-container columns">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            {{! Each post will be output using this markup }}
+            {{#foreach posts}}
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small blog-item">
+                <div class="large-4 medium-4 small-12 columns no-sp-lm-left blog-post-info">
+                    <span class="blog-post-title"><a href="{{url}}">{{{title}}}</a></span>
+                    <span class="blog-post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+                    <span class="blog-post-author">by {{author.name}}</span>
+                </div>
+                <div class="large-8 medium-8 small-12 columns no-sp-lm-right blog-post-excerpt">
+                    {{excerpt}}&hellip;
+                </div>
+            </div>
+            
+            
+            {{/foreach}}
+        
+        
+            <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns no-sp">
+                {{pagination name="blog"}}
+            </div>
+        </div>
+    </div>
+
+</main>

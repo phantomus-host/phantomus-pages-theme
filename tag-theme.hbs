@@ -1,0 +1,41 @@
+{{!< default}}
+
+<main class="content" role="main">
+    
+    <div class="page-no-image-title">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            Theme Collection
+        </div>
+    </div>
+    
+    <div class="portfolio-container columns">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            {{! Each post will be output using this markup }}
+            {{#foreach posts}}
+            
+                {{#phantomus_pattern pattern="img,string,link,link,link"}}
+        
+                    <div class="large-6 medium-12 small-12 columns {{#if this.even}}no-sp-lm-left{{else}}no-sp-lm-right{{/if}} portfolio-item">
+                        <img src="{{{this.el-0.href}}}" alt="{{{this.el-0.alt}}}" />
+                        <h1>{{{this.post.title}}}</h1>
+                        <p class="desc">{{{this.el-1}}}</p>
+                        <p class="by">
+                            by <a href="{{{this.el-2.href}}}">{{{this.el-2.title}}}</a>
+                        </p>
+                        <p class="demo">
+                            <a class="button small" href="{{{this.el-3.href}}}">Live Demo</a>
+                            <a class="button small" href="{{{this.el-4.href}}}">Download</a>
+                        </p>
+                    </div>
+                {{/phantomus_pattern}}
+
+            {{/foreach}}
+        
+        
+            <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns no-sp">
+                {{pagination name="theme"}}
+            </div>
+        </div>
+    </div>
+
+</main>

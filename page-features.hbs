@@ -1,0 +1,35 @@
+{{!< default}}
+
+<main class="home-page-content background-scroll-wrap" role="main">
+    {{#post}}
+        
+        
+        {{#phantomus_pattern pattern="img" matchOccurrence="1"}}
+            <section class="single-page-slide-image columns" style="background-image:url({{{this.el-0.href}}});" data-type="background-single" data-stellar-background-ratio="0.2">
+                <section class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+                    <div class="single-page-slide-title">
+                        {{{this.post.title}}}
+                    </div>
+                </section>
+            </section>
+        {{/phantomus_pattern}}
+        
+    
+        {{#phantomus_pattern pattern="img,header,[to-img]"}}
+            <section class="single-page-content columns feature-content-{{index}}">
+                <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
+                    <img src="{{{this.el-0.href}}}" class="sub-section-img" />
+                    <div class="sub-section-title w-img">{{{this.el-1}}}</div>
+            
+                    {{#foreach this.elements}}
+                        <div class="sub-section-text">
+                            {{{this}}}
+                        </div>
+                    {{/foreach}}
+
+                </div>
+            </section>
+        {{/phantomus_pattern}}
+    
+    {{/post}}
+</main>

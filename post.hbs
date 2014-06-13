@@ -1,0 +1,49 @@
+{{!< default}}
+
+<main class="content" role="main">
+    
+    <div class="page-no-image-title">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            Blog
+        </div>
+    </div>
+    
+    <div class="blog-container columns">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            {{#post}}
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small">
+                <span class="blog-post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+                <h1 class="post-title">{{{title}}}</h1>
+            </div>
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small post-content">
+                {{content}}
+            </div>
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small share">
+                <span class="post-share">
+                    <a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" 
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="sicon-tw" rel="external"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" 
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="sicon-f" rel="external"></a>
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="sicon-g" rel="external"></a>
+                </span>
+            </div>
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small author">
+                <section class="post-author" {{#if author.image}} style="margin-left: 90px;" {{/if}}>
+                    {{#if author.image}}
+                        <div class="uimg" style="background-image: url({{author.image}})"></div>
+                    {{/if}}
+                    <h4>{{author.name}}</h4>
+                    <p>{{author.bio}}</p>
+                </section>
+            </div>
+            
+            {{/post}}
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,31 @@
+{
+    "paths": {
+    
+        "/": "home",
+        "/blog/": "blog", 
+        "/themes/": "themes"
+    
+    }, 
+    
+    "mapping": {
+        
+        "home": {
+            "staticPage": true,
+            "path": "/home/"
+        },
+    
+        "blog": {
+            "tagged": true,
+            "slug": "blog",
+            "title": "Blog | Phantomus Pages"
+        },
+    
+        "themes": {
+            "tagged": true,
+            "slug": "theme",
+            "title": "Themes | Phantomus Pages"
+        }
+    
+    }
+    
+}

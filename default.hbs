@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/foundation.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/site.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+    
+</head>
+<body class="{{body_class}}">
+
+    <header>
+        <div class="nav-title large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
+            <div class="title">
+                {{#if @blog.logo}}
+                    <a href="{{@blog.url}}"><img src="{{@blog.logo}}"/></a>
+                {{else}}
+                    <a href="{{@blog.url}}">{{@blog.title}}</a>
+                {{/if}}
+            </div>
+            <ul class="top-nav hide-for-small">{{>top_menu}}</ul>
+            <div class="mobile-menu-toggle mobile-menu"><a id="mobile-menu" class="hide-for-medium-up" href="#menu">MENU</a></div>
+            <div id="sidr" class="sidr mobile-menu" style="display: none">
+                <ul>{{>top_menu}}</ul>
+            </div>
+        </div>
+    </header>
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+    
+    <footer class="columns">
+        <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
+            <div class="footer-section large-3 medium-4 small-12 columns no-sp-lm-left">
+                <ul class="footer-menu">
+                    {{>top_menu}}
+                </ul>
+            </div>
+            <div class="footer-section large-4 medium-4 small-12 columns">
+                Phantomus Pages is a service of <a href="http://phantomus.com" target="_blank">Phantomus</a>, a premium hosting service for Ghost blogs. Support is provided to all users of our service. For more information, please visit <a class="underl" href="http://phantomus.com" target="_blank">www.phantomus.com</a>
+            </div>
+            <div class="footer-section footer-text-right large-5 medium-4 small-12 columns no-sp-lm-right">
+                Additional content here
+            </div>
+            <div class="footer-section footer-border large-12 medium-12 small-12 columns no-sp-lm-left">
+                This website is powered by Phantomus Pages. &copy; All rights reserved 2014. Phantomus, Ltd.
+            </div>
+        </div>
+    </footer>
+    
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{{!< default}}
+
+<main class="home-page-content background-scroll-wrap" role="main">
+    {{#post}}
+        
+        {{#phantomus_pattern pattern="header,img,string,[string]"}}
+            <section class="back home-slide-image columns" style="background-image:url({{{this.el-1.href}}});" data-type="background" data-idx="{{{this.index}}}" data-stellar-background-ratio="0.2">
+                <section class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+                    <div class="home-slide-title home-slide-{{this.index}}">
+                        {{{this.el-0}}}
+                    </div>
+                </section>
+            </section>
+            <section class="desc columns desc-{{{this.index}}}" data-idx="{{{this.index}}}">
+                 <div class="large-8 medium-8 small-12 large-centered medium-centered small-centered columns">
+                    {{#if this.el-3}}
+                        <div class="large-6 medium-6 small-12 columns">
+                            {{{this.el-2}}}
+                        </div>
+                        <div class="large-6 medium-6 small-12 columns">
+                            {{{this.el-3}}}
+                        </div>
+                    {{else}}
+                        {{{this.el-2}}}
+                    {{/if}}
+                </div>
+            </section>
+        {{/phantomus_pattern}}
+    
+    {{/post}}
+</main>
